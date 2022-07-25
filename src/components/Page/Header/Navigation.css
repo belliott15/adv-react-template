@@ -1,0 +1,13 @@
+.Navigation{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    align-items: flex-start;
+}
+
+a {
+ padding: 3px 7px;
+ color: initial;
+ text-decoration: none;
+ font-size: 1rem;
+}

@@ -1,0 +1,11 @@
+.Header{
+    background: linear-gradient(45deg,silver -5%, rgb(135, 71, 34)10%, rgb(137, 41, 3)  90%, silver 120% );
+
+    height: 90px;
+
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 10px;
+    align-items: center;
+
+}
