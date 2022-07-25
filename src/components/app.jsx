@@ -1,21 +1,21 @@
 
 import {
+  BrowserRouter as Router,
   Routes,
   Route,
-  Router,
   Navigate,
 } from 'react-router-dom';
-import Layout from 
-import Home from './Home';
-import Dungeon from './Dungeon';
-import Lair from './Lair';
+import Layout from './Page/Layout.jsx';
+import Home from './Home/Home.jsx';
+import Dungeon from './Dungeon/Dungeon.jsx';
+import Lair from './Lair/Lair.jsx';
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="home" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="dungeon" element={<Dungeon />}/>
           <Route path="lair" element={<Lair/>} />
           <Route path="*" element={<Navigate to="/" replace />} />
