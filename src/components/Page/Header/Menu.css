@@ -1,11 +1,12 @@
 .Menu{
     height: 60px;
     width: 60px;
-    background: rgba(199, 120, 56, 0.5);
-    border-radius: 5px;
+    background: linear-gradient(125deg, var(--color-4), var(--color-3));
+    
 
     &::before{
-        content: '☰'
+        content: '☰';
+        font-size: 1.5em;
     }
 
     &.Open{
@@ -14,18 +15,19 @@
         }
         .MenuContainer{
         transform: translateX(0);
+        width: 100px;
       }
     }
 
     .MenuContainer{
         position: absolute;
         top: 60px;
-        height: 100vh;
+        height: calc(100vh - 60px);
         width: 90px;
         padding: 20px 10px;
-        background: linear-gradient(215deg, rgba(199, 100, 255, 0.9), green);
+        background: linear-gradient(-35deg, var(--color-1), var(--color-2) 75%, var(--color-4) 90%, var(--color-3) 95%);
         transform: translateX(-100%);
-        transition: transform 200ms ease-in;
+        transition: transform 300ms linear;
     }
 }
 

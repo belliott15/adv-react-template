@@ -1,5 +1,6 @@
 *{ 
     box-sizing: border-box;
+    
 }
 
 body{
@@ -7,5 +8,11 @@ body{
 }
 
 :root{
-    
+    --color-1: #5f0f40;
+    --color-2: #9a031e;
+    --color-3: #fb8b24;
+    --color-4: #e36414;
+    --color-5: #0f4c5c;
+    --white-color: rgb(252, 223, 223);
+    --black-color: rgb(24, 15, 35);
 }
