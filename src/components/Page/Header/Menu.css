@@ -12,18 +12,20 @@
         &::before {
             content: '✕'
         }
+        .MenuContainer{
+        transform: translateX(0);
+      }
     }
 
     .MenuContainer{
-        transform: translateX(0);
+        position: absolute;
+        top: 60px;
+        height: 100vh;
+        width: 90px;
+        padding: 20px 10px;
+        background: linear-gradient(215deg, rgba(199, 100, 255, 0.9), green);
+        transform: translateX(-100%);
+        transition: transform 200ms ease-in;
     }
 }
 
-.MenuContainer{
-    position: absolute;
-    top: 100%;
-    padding: 20px 10px;
-    background:rgba(199, 120, 56, 0.5);
-    transform: translateX(-100%);
-    transition: transform 200ms ease-in;
-}

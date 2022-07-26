@@ -6,7 +6,7 @@ import styles from './Header.css';
 export default function Header() {
   return (
     <header className={styles.Header}>
-      <div>
+      <div className={styles.MenuContainer}>
         <Menu />
       </div>
 
@@ -14,9 +14,11 @@ export default function Header() {
         App Name
       </div>
 
-      <div>
+      <div className={styles.NavigationContainer}>
         <Navigation />
       </div>
+
+      <div>User</div>
     </header>
   );
 }
