@@ -4,7 +4,7 @@
     "description": "",
     "main": "dist/index.js",
     "scripts": {
-        "test": "exit 0",
+        "test": "jest",
         "lint": "eslint --ext js --ext jsx src",
         "start": "webpack serve --hot --mode development --devtool eval-source-map --open",
         "start:watch": "npm run start",
