@@ -1,6 +1,6 @@
 
 export default function Lair() {
   return (
-    <div>Lair Sweet Lair</div>
+    <div>My Lair Lady</div>
   );
 }
