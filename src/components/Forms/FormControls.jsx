@@ -9,10 +9,14 @@ export function FormControls({ label, className: customClassName, children }) {
 
   return (
     <label className={className}>
-      <label text={label} />
+      <Label text={label} />
       {children}
     </label>
   );
+}
+
+function Label({ text }){
+  return <span className="theme-font">{text}</span>;
 }
 
 export function InputControl({ label, className, ...rest }){
@@ -22,3 +26,14 @@ export function InputControl({ label, className, ...rest }){
     </FormControls>
   );
 }
+
+export function SelectControl({ label, children, ...rest }){
+  return(
+    <FormControls label={label} >
+      <select {...rest}>{children}</select>
+    </FormControls> 
+  );
+}
+
+
+

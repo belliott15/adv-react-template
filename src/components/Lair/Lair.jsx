@@ -1,13 +1,17 @@
+import { InputControl } from '../Forms/FormControls';
 import styles from './Lair.css';
 
 export default function Lair() {
   return (
     <section className={styles.Lair}>
       <form>
-        <label>
-          Name:
-          <input></input>
-        </label>
+        <InputControl 
+          label="email" 
+          name="email" 
+          placeholder="Enter your email here..."
+          type="email"
+          required
+        />
 
         <label>
           Class:
@@ -27,10 +31,10 @@ export default function Lair() {
           <textarea></textarea>
         </label>
 
-        <label>
-          Race:
-          <input></input>
-        </label>
+        <InputControl 
+          label="Race"
+          placeholder="Enter your Character Race..."
+        />
       </form>
     </section>
   );
