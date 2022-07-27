@@ -5,6 +5,7 @@
 
 body{
     height: 100vh;
+    font-family: var(--primary-font);
 }
 
 :root{
@@ -36,6 +37,7 @@ body{
 :global(.theme-font){
     font-size: 1.2rem;
     font-weight: 500;
-    color: var(--black-color);
+    padding-bottom: 5px;
+    color: var(--white-color);
     font-family: var(--secondary-font);
 }
