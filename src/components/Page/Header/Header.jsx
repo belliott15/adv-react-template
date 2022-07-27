@@ -1,6 +1,7 @@
 import Menu from './Menu';
 import Navigation from './Navigation';
 import styles from './Header.css';
+import User from './User';
 
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
         <Navigation />
       </div>
 
-      <div>User</div>
+      <User />
     </header>
   );
 }

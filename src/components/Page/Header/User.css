@@ -1,0 +1,32 @@
+.User{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .UserMenu{
+        position: absolute;
+        top: 110%;
+        right: -20px;
+        background: var(--color-5);
+        display: grid;
+        width: max-content;
+        padding: var(--padding);
+        border-radius: 5px;
+        border: var(--black-color) solid 2px;
+
+        display: none
+    }
+
+    button{
+        background: none;
+        cursor: pointer;
+    }
+
+    &.Open{
+        .UserMenu{
+        display: grid;
+      }
+   }
+}
