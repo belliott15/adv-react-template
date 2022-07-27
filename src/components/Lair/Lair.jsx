@@ -1,8 +1,8 @@
-
+import styles from './Lair.css';
 
 export default function Lair() {
   return (
-    <section>
+    <section className={styles.Lair}>
       <form>
         <label>
           Name:
