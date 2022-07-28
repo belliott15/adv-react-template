@@ -38,3 +38,11 @@
     cursor: pointer;
     margin-top: 20px;
 }
+
+.Fieldset {
+    border-top: 1px inset var(--color-1);
+
+    legend{
+        text-align: center;
+    }
+}

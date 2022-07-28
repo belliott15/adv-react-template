@@ -54,5 +54,14 @@ export function FormButton({ children }){
   );
 }
 
+export function Fieldset({ legend, children }){
+  return(
+    <fieldset className={styles.Fieldset}>
+      <legend className="theme-font">{legend}</legend>
+      {children}
+    </fieldset>
+  );
+}
+
 
 

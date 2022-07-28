@@ -35,7 +35,10 @@ export default function User() {
 
   return (
     <div className={className}>
-      <button onClick={handleClick}>User</button>
+      
+      <button onClick={handleClick}>
+        <div className={styles.avatar}>B</div>
+        Beau </button>
       <div className={styles.UserMenu}>
         <Link className="theme-font" to="lair">Profile</Link>
         <Link className="theme-font" to="lair">Sign Out</Link>

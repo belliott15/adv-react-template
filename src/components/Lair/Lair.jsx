@@ -1,4 +1,5 @@
 import { 
+  Fieldset,
   FormButton,
   InputControl, 
   SelectControl, 
@@ -10,13 +11,21 @@ export default function Lair() {
   return (
     <section className={styles.Lair}>
       <form>
-        <InputControl 
-          label="Email" 
-          name="email" 
-          placeholder="Enter your email here..."
-          type="email"
-          required
-        />
+        <Fieldset legend="Character Build" >
+          <InputControl 
+            label="Email" 
+            name="email" 
+            placeholder="Enter your email here..."
+            type="email"
+            required
+          />
+
+          <InputControl 
+            label="Character Name"
+            placeholder="Your Character Name"
+            required
+          />
+        </Fieldset>
 
         <SelectControl label="Class" >
           <option>This</option>
@@ -37,6 +46,8 @@ export default function Lair() {
         />
 
         <FormButton>Submit</FormButton>
+        
+        
       </form>
     </section>
   );
