@@ -48,7 +48,7 @@ export default function Lair() {
 
         <CheckBoxControl 
           label="Would you like to receive dragon mail?"
-          text="Yes"
+          text="Yes, I love dragon mail!"
         />
 
         <FormButton>Submit</FormButton>

@@ -48,9 +48,9 @@ export function TextAreaControl({
 
 export function CheckBoxControl({ label, text, ...rest }){
   return (
-    <div>
+    <div className={styles.FormControls}>
       <Label text={label} />
-      <label>
+      <label className={styles.CheckboxLabel}>
         <input type="checkbox" {...rest}/>
         {text}
       </label>
