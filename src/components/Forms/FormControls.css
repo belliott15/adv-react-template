@@ -18,8 +18,8 @@
    input, select, textarea{
     display: block;
     width: 100%;
-    height: 30px;
-    padding: 5px;
+    height: 2.5em;
+    padding: 3px;
     font-size: 1em;
     font-family: var(--primary-font);
    }
@@ -40,7 +40,7 @@
 }
 
 .Fieldset {
-    border-top: 1px inset var(--color-1);
+    border-top: 3px inset var(--color-1);
 
     legend{
         text-align: center;

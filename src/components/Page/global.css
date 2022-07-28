@@ -10,11 +10,11 @@ body{
 
 :root{
     /* Global text fonts */
-    --primary-font: 'Yanone Kaffeesatz', sans-serif, "Segoe UI", Candara, 
+    --secondary-font: 'Lobster Two', cursive, sans-serif, "Segoe UI", Candara, 
     "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", 
     "Trebuchet MS", Verdana, "Verdana Ref"; 
 
-    --secondary-font: 'Exo', "Segoe UI", Candara, 
+    --primary-font: 'Exo', "Segoe UI", Candara, 
     "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", 
     "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 
@@ -35,9 +35,9 @@ body{
 }
 
 :global(.theme-font){
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: bolder;
     padding-bottom: 5px;
-    color: var(--white-color);
+    color: var(--black-color);
     font-family: var(--secondary-font);
 }
