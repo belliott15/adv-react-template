@@ -1,0 +1,53 @@
+.User{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+
+    .UserMenu{
+        position: absolute;
+        top: 110%;
+        right: -20px;
+        background: var(--color-5);
+        display: grid;
+        width: max-content;
+        padding: var(--padding);
+        border-radius: 5px;
+        border: var(--black-color) solid 2px;
+
+        display: none
+    }
+
+    button{
+        background: none;
+        cursor: pointer;
+    }
+
+    &.Open{
+        .UserMenu{
+        display: grid;
+      }
+   }
+
+
+}
+
+button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.avatar{
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--color-5), var(--color-4));
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    font-size: 1.2em;
+    margin: 10px;
+}

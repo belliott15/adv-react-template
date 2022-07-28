@@ -1,0 +1,43 @@
+*{ 
+    box-sizing: border-box;
+    
+}
+
+body{
+    height: 100vh;
+    font-family: var(--primary-font);
+}
+
+:root{
+    /* Global text fonts */
+    --secondary-font: 'Syncopate', sans-serif, "Segoe UI", Candara, 
+    "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", 
+    "Trebuchet MS", Verdana, "Verdana Ref"; 
+
+    --primary-font: 'Exo', "Segoe UI", Candara, 
+    "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", 
+    "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+
+    /* Global Color scheme */
+    --color-1: #5f0f40;
+    --color-2: #9a031e;
+    --color-3: #fb8b24;
+    --color-4: #e36414;
+    --color-5: #0f4c5c;
+    --white-color: rgb(252, 223, 223);
+    --black-color: rgb(24, 15, 35);
+
+    /* global padding to ensure perfect spacing */
+    --padding: 30px;
+    @media (min-width: 750px){
+        --padding: 50px;
+    }
+}
+
+:global(.theme-font){
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    color: var(--black-color);
+    font-family: var(--secondary-font);
+}
