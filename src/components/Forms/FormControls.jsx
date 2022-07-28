@@ -46,5 +46,13 @@ export function TextAreaControl({
   );
 }
 
+export function FormButton({ children }){
+  return(
+    <button className={styles.FormButton}>
+      {children}
+    </button>
+  );
+}
+
 
 
