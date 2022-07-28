@@ -35,5 +35,16 @@ export function SelectControl({ label, children, ...rest }){
   );
 }
 
+export function TextAreaControl({
+  label, 
+  ...rest
+}){
+  return(
+    <FormControls label={label} >
+      <textarea {...rest} ></textarea>
+    </FormControls> 
+  );
+}
+
 
 
