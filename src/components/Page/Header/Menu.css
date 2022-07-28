@@ -15,7 +15,7 @@
         }
         .MenuContainer{
         transform: translateX(0);
-        width: 100px;
+        width: 150px;
       }
     }
 
@@ -23,10 +23,10 @@
         position: absolute;
         top: 60px;
         height: calc(100vh - 60px);
-        width: 90px;
+        width: 150px;
         padding: 20px 10px;
         background: linear-gradient(-35deg, var(--color-1), var(--color-2) 75%, var(--color-4) 90%, var(--color-3) 95%);
-        transform: translateX(-100%);
+        transform: translateX(-150%);
         transition: transform 300ms linear;
     }
 }

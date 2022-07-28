@@ -46,6 +46,18 @@ export function TextAreaControl({
   );
 }
 
+export function CheckBoxControl({ label, text, ...rest }){
+  return (
+    <div>
+      <Label text={label} />
+      <label>
+        <input type="checkbox" {...rest}/>
+        {text}
+      </label>
+    </div>
+  );
+}
+
 export function FormButton({ children }){
   return(
     <button className={styles.FormButton}>
@@ -62,6 +74,7 @@ export function Fieldset({ legend, children }){
     </fieldset>
   );
 }
+
 
 
 

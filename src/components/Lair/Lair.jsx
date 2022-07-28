@@ -1,4 +1,5 @@
 import { 
+  CheckBoxControl,
   Fieldset,
   FormButton,
   InputControl, 
@@ -43,6 +44,11 @@ export default function Lair() {
         <InputControl 
           label="Race"
           placeholder="Enter your Character Race..."
+        />
+
+        <CheckBoxControl 
+          label="Would you like to receive dragon mail?"
+          text="Yes"
         />
 
         <FormButton>Submit</FormButton>
