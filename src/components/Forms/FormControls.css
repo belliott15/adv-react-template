@@ -28,4 +28,13 @@
     height: 5em;
     resize: vertical;
    }
+
+}
+
+.FormButton{
+    padding: 10px;
+    background: linear-gradient(200deg, var(--color-4), var(--color-3));
+    border: solid var(--color-3) 2px;
+    cursor: pointer;
+    margin-top: 20px;
 }

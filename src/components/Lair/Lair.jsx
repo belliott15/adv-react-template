@@ -1,4 +1,5 @@
 import { 
+  FormButton,
   InputControl, 
   SelectControl, 
   TextAreaControl 
@@ -34,6 +35,8 @@ export default function Lair() {
           label="Race"
           placeholder="Enter your Character Race..."
         />
+
+        <FormButton>Submit</FormButton>
       </form>
     </section>
   );
