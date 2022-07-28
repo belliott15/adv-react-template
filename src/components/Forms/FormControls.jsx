@@ -15,6 +15,21 @@ export function FormControls({ label, className: customClassName, children }) {
   );
 }
 
+function Option({ text, as: Tag ='span' }){
+  if (!text) return null;
+
+  const className = classNames(styles.Label, 'theme-font');
+  return <Tag className={className}>{text}</Tag>;
+}
+
+export function CheckboxOption(props){
+  return <Option type="checkbox"{...props} />;
+}
+
+export function RadioOption(props){
+  return <Option type="radio" {...props}/>;
+}
+
 function Label({ text }){
   return <span className="theme-font">{text}</span>;
 }

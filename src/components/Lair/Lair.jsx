@@ -9,9 +9,15 @@ import {
 import styles from './Lair.css';
 
 export default function Lair() {
+
+  function handleSubmit(e){
+    e.preventDefault();
+    window.location.replace('/');
+  }
+
   return (
     <section className={styles.Lair}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Fieldset legend="Character Build" >
           <InputControl 
             label="Email" 
@@ -26,34 +32,36 @@ export default function Lair() {
             placeholder="Your Character Name"
             required
           />
-        </Fieldset>
+        
 
-        <SelectControl label="Class" >
-          <option>This</option>
-          <option>That</option>
-          <option>Druid</option>
-          <option>Another Thing</option>
-          <option>Rogue</option>
-          <option>Paladin</option>
-          <option>Basic Bitch</option>
-        </SelectControl>
+          <SelectControl label="Class" >
+            <option>This</option>
+            <option>That</option>
+            <option>Druid</option>
+            <option>Another Thing</option>
+            <option>Rogue</option>
+            <option>Paladin</option>
+            <option>Basic Bitch</option>
+          </SelectControl>
             
+          <TextAreaControl 
+            label="Bio" 
+            placeholder="Character Details" 
+          />
 
-        <TextAreaControl label="Bio" placeholder="Character Details" />
+          <InputControl 
+            label="Race"
+            placeholder="Enter your Character Race..."
+          />
 
-        <InputControl 
-          label="Race"
-          placeholder="Enter your Character Race..."
-        />
+          <CheckBoxControl 
+            label="Would you like to receive dragon mail?"
+            text="Yes, I love dragon mail!"
+          />
 
-        <CheckBoxControl 
-          label="Would you like to receive dragon mail?"
-          text="Yes, I love dragon mail!"
-        />
-
-        <FormButton>Submit</FormButton>
+          <FormButton onClick={handleSubmit}>Submit</FormButton>
         
-        
+        </Fieldset>
       </form>
     </section>
   );
