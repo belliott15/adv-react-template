@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getPokedex } from '../services/pokedex-service.js';
+import { getPokedex, getShapes } from '../services/pokedex-service.js';
 
 
 export function usePokedex() {
@@ -26,4 +26,26 @@ export function usePokedex() {
 
 
   return { pokedex, error, count };
+}
+
+export function useShapes(){
+  const [shapes, setShapes] = useState([]);
+  const [error, setError] = useState([]);
+
+  useEffect(() => {
+    async function fetch(){
+      const { data, error } = await getShapes();
+
+      if (data){
+        setShapes(data);
+        setError(null);
+      }
+      if (error) {
+        setError(error);
+      }
+    }
+    fetch();
+  }, []);
+
+  return { shapes, error };
 }

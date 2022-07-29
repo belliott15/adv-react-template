@@ -1,5 +1,5 @@
 const API_URL = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
-const TYPES_URL = `${API_URL}/types`;
+const SHAPES_URL = `${API_URL}/shapes`;
 
 //catch all get function that pulls from the api
 export default async function get(url) {
@@ -18,6 +18,6 @@ export async function getPokedex(){
 }
 
 //gets the types of pokemon and their counts
-export async function getTypes(){
-  return await get(TYPES_URL);
+export async function getShapes(){
+  return await get(SHAPES_URL);
 }

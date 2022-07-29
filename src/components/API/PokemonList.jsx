@@ -33,7 +33,7 @@ function Card({ pokemon }){
     </li>
   );
 }
-
+//created to prevent NA types from showing up
 function Type({ type }){
   return type === 'NA' ? null : <span>{type}</span>;
 }
