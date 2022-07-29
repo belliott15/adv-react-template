@@ -1,11 +1,15 @@
-
+import { usePokedex } from '../../state/hooks/Pokedex';
+import PokemonList from './PokemonList';
+import styles from './Pokedex.css';
 
 export default function Pokedex() {
-const { pokedex } = usePokedex();
+  const { pokedex } = usePokedex();
+
+  if (!pokedex) return null;
 
   return (
-    <div>
-        <PokemonList pokedex={pokedex}/>
-    </div>
-  )
+    <section className={styles.Pokedex}>
+      <PokemonList pokedex={pokedex}/> 
+    </section>
+  );
 }
