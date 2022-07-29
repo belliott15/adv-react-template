@@ -2,12 +2,13 @@ import styles from './FormControls.css';
 import classNames from 'classnames';
 import { Children, cloneElement } from 'react';
 
+
+//Overview form control used on all controls
 export function FormControls({ label, className: customClassName, children }) {
   const className = classNames(
     styles.FormControls,
     customClassName
   );
-
   return (
     <label className={className}>
       <Label text={label} />
@@ -16,6 +17,7 @@ export function FormControls({ label, className: customClassName, children }) {
   );
 }
 
+//used for checkbox and radio inputs
 function Option({ text, type, ...rest }){
   return(
     <label className={styles.CheckboxLabel}>
@@ -23,7 +25,6 @@ function Option({ text, type, ...rest }){
       {text}
     </label>
   );
-  
 }
 
 export function CheckboxOption(props){
@@ -34,6 +35,7 @@ export function RadioOption(props){
   return <Option type="radio" {...props}/>;
 }
 
+//separates different 
 function LabelText({ text, as: Tag = 'span' }){
   if(!text) return null;
 
