@@ -1,4 +1,4 @@
-import Pokedex from '../API/pokedex';
+import Pokedex from '../API/Pokedex.jsx';
 
 
 export default function Dungeon() {
