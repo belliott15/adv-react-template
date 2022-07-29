@@ -1,7 +1,10 @@
+import Pokedex from '../API/pokedex';
 
 
 export default function Dungeon() {
   return (
-    <div>Dungeon Sweet Dungeon</div>
+    <div>
+      <Pokedex />
+    </div>
   );
 }
