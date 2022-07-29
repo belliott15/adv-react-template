@@ -26,10 +26,14 @@ function Card({ pokemon }){
         {name}
       </h2>
 
-      <div>
-        <span>{type_1}</span>
-        <span>{type_2}</span>
+      <div className={styles.Types}>
+        <Type type={type_1} />
+        <Type type={type_2} />
       </div>
     </li>
   );
+}
+
+function Type({ type }){
+  return type === 'NA' ? null : <span>{type}</span>;
 }

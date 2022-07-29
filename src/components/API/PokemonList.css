@@ -37,5 +37,12 @@
         font-size: 1em;
     }
 
+    .Types{
+        display: flex;
+        gap: 5px;
+        font-style: italic;
+        font-size: .75em;
+    }
+
     }
 }

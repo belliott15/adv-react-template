@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import get from '../services/pokedex-service.js';
+import { getPokedex } from '../services/pokedex-service.js';
 
 
 export function usePokedex() {
@@ -10,7 +10,7 @@ export function usePokedex() {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data = {}, error } = await get();
+      const { data = {}, error } = await getPokedex();
       if(data){
         const { results, count } = data;
         setPokedex(results);
