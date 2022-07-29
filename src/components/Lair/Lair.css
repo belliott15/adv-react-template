@@ -11,6 +11,6 @@
 
         display: grid;
         width: 60%;
-        margin: 10px;
+        row-gap: 25px;
     }
 }

@@ -41,3 +41,9 @@ body{
     color: var(--black-color);
     font-family: var(--secondary-font);
 }
+
+:global(.hightlight-font){
+    font-size: 1.5em;
+    font-family: var(--primary-font);
+    font-weight: 900;
+}

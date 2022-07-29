@@ -1,5 +1,6 @@
 import styles from './FormControls.css';
 import classNames from 'classnames';
+import { Children, cloneElement } from 'react';
 
 export function FormControls({ label, className: customClassName, children }) {
   const className = classNames(
@@ -15,11 +16,14 @@ export function FormControls({ label, className: customClassName, children }) {
   );
 }
 
-function Option({ text, as: Tag ='span' }){
-  if (!text) return null;
-
-  const className = classNames(styles.Label, 'theme-font');
-  return <Tag className={className}>{text}</Tag>;
+function Option({ text, type, ...rest }){
+  return(
+    <label className={styles.CheckboxLabel}>
+      <input type={type} {...rest}/>
+      {text}
+    </label>
+  );
+  
 }
 
 export function CheckboxOption(props){
@@ -28,6 +32,36 @@ export function CheckboxOption(props){
 
 export function RadioOption(props){
   return <Option type="radio" {...props}/>;
+}
+
+function LabelText({ text, as: Tag = 'span' }){
+  if(!text) return null;
+
+  const className = classNames(styles.Label, 'hightlight-font');
+  return <Tag className={className}>{text}</Tag>;
+}
+
+export function OptionGroupControl({
+  label, 
+  name, 
+  size = '100px', 
+  children
+}){
+  return (
+    <div className={styles.FormControls}>
+      <fieldset>
+        <LabelText text={label} as="legend" />
+        <div className={styles.Options}
+          style={{
+            gridTemplateColumns: `repeat(auto-fill, minmax(${size}, 1fr)`
+          }}
+        >
+          {Children.map(children, (child) => 
+            cloneElement(child, { name }))}
+        </div>
+      </fieldset>
+    </div>
+  );
 }
 
 function Label({ text }){
