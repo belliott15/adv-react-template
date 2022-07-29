@@ -5,7 +5,7 @@ const API_URL = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
 export default async function get() {
   const res = await fetch(API_URL);
   const body = await res.json();
-    // console.log('res.ok', res.ok);
+  // console.log('res.ok', res.ok);
   return {
     data: res.ok ? body : null,
     error: res.ok ? null : body,
