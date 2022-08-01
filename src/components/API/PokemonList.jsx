@@ -1,11 +1,13 @@
 
-import { usePokedex } from '../../state/hooks/Pokedex';
 import useSearch from '../../state/hooks/url';
+import { usePokedex } from '../../state/hooks/Pokedex';
 import styles from './PokemonList.css';
 
 export default function PokemonList() {
   const [searchParams] = useSearch();
-  const { pokedex } = usePokedex(searchParams);
+  const { pokedex, addPage } = usePokedex(searchParams);
+
+  const { ref } = 
 
   return (
     <ul className={styles.PokemonList}>

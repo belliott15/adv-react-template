@@ -1,22 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 //how we get the data from the url
 export default function useSearch() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [params, setParams] = useState({});
 
-  useEffect(() => {
-    setParams(Object.fromEntries(searchParams.entries()));
-  }, [searchParams.toString()]);
-  
-  //cleaning the params bar to restrict any undefined or null values
-  const setParameters = (search) => {
+  const search = useMemo(() => {
+    return Object.fromEntries(searchParams.entries());
+  }, [searchParams]);
+
+  const setSearch = (search) => {
     const clean = removeEmptyKeys(search);
     setSearchParams(clean);
   };
   
-  return { params, setParameters };
+  return { search, setSearch };
 }
 
 //used to clean the search params in case a search is left empty

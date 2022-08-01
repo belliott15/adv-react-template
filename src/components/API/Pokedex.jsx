@@ -1,4 +1,3 @@
-import { usePokedex } from '../../state/hooks/Pokedex.js';
 import PokemonList from './PokemonList';
 import Search from './Search';
 import styles from './Pokedex.css';
