@@ -1,7 +1,12 @@
 
+import { usePokedex } from '../../state/hooks/Pokedex';
+import useSearch from '../../state/hooks/url';
 import styles from './PokemonList.css';
 
-export default function PokemonList({ pokedex }) {
+export default function PokemonList() {
+  const [searchParams] = useSearch();
+  const { pokedex } = usePokedex(searchParams);
+
   return (
     <ul className={styles.PokemonList}>
       {pokedex.map((pokemon) => 

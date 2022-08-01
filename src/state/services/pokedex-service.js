@@ -13,8 +13,13 @@ export default async function get(url) {
 }
 
 //gets all pokemon
-export async function getPokedex(){
-  return await get(API_URL);
+export async function getPokedex(search, pagingOptions = {}){
+  const params = new URLSearchParams(search);
+  const { page, perPage } = pagingOptions; 
+  if(page) params.set('page', page);
+  if(perPage) params.set('perPage', perPage);
+
+  return await get(`${API_URL}?${params.toString()}`);
 }
 
 //gets the types of pokemon and their counts
