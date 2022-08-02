@@ -1,7 +1,10 @@
+import Families from "./Families";
 
 
 export default function FamilyList() {
   return (
-    <div>FamilyList</div>
+    <ul>
+      {/* map through families and render a single family card */}
+    </ul>
   );
 }
