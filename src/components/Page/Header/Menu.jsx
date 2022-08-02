@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from './Menu.css';
 
 
-export default function Menu() {
+export default function Menu({ navigation }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const className = classNames(styles.Menu, {
@@ -37,7 +37,7 @@ export default function Menu() {
   return (
     <button onClick={handleClick} className={className}>
       <div className={styles.MenuContainer}>
-        <Navigation />
+        <Navigation navigation={navigation} />
       </div>
     </button>
   );

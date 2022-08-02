@@ -8,7 +8,7 @@ export function usePokedex(search, options) {
 
   const [count, setCount] = useState(0);
   const [page, setPage] = useState(1);
-  const perPage = options?.perPage ?? 20;
+  const perPage = options?.perPage ?? 200;
 
   useEffect(() => {
     setPage(1);

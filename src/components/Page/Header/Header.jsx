@@ -5,10 +5,17 @@ import User from './User';
 
 
 export default function Header() {
+
+  const allPages = [
+    { to: '/', label: 'Home' }, 
+    { to: 'pokedex', label: 'Pokedex' }, 
+    { to: 'lair', label: 'Lair' },
+    { to: 'fuzzy-bunny', label: 'Fuzzy Bunnies' }
+  ]
   return (
     <header className={styles.Header}>
       <div className={styles.MenuContainer}>
-        <Menu />
+        <Menu navigation={allPages} />
       </div>
 
       <div>
@@ -16,7 +23,7 @@ export default function Header() {
       </div>
 
       <div className={styles.NavigationContainer}>
-        <Navigation />
+        <Navigation navigation={allPages} />
       </div>
 
       <User />
