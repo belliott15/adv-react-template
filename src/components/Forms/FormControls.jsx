@@ -70,18 +70,18 @@ function Label({ text }){
   return <span className="theme-font">{text}</span>;
 }
 
-export function InputControl({ label, className, ...rest }){
+export function InputControl({ label, className, value, ...rest }){
   return (
     <FormControls label={label} className={className} >
-      <input {...rest} />
+      <input value={value || ''} {...rest} />
     </FormControls>
   );
 }
 
-export function SelectControl({ label, children, ...rest }){
+export function SelectControl({ label, children, value, ...rest }){
   return(
     <FormControls label={label} >
-      <select {...rest}>{children}</select>
+      <select value={value || ''} {...rest}>{children}</select>
     </FormControls> 
   );
 }

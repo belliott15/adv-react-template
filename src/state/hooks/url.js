@@ -14,7 +14,7 @@ export default function useSearch() {
     setSearchParams(clean);
   };
   
-  return { search, setSearch };
+  return [search, setSearch];
 }
 
 //used to clean the search params in case a search is left empty

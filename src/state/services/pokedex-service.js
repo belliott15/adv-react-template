@@ -5,7 +5,7 @@ const SHAPES_URL = `${API_URL}/shapes`;
 export default async function get(url) {
   const res = await fetch(url);
   const body = await res.json();
-  // console.log('res.ok', res.ok);
+
   return {
     data: res.ok ? body : null,
     error: res.ok ? null : body,
@@ -22,7 +22,7 @@ export async function getPokedex(search, pagingOptions = {}){
   return await get(`${API_URL}?${params.toString()}`);
 }
 
-//gets the types of pokemon and their counts
+//gets the shapes of pokemon and their counts
 export async function getShapes(){
   return await get(SHAPES_URL);
 }

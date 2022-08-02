@@ -4,27 +4,27 @@ import  {
   SelectControl 
 } from '../Forms/FormControls';
 import { useShapes } from '../../state/hooks/Pokedex';
-import styles from './Search.css';
 import useSearch from '../../state/hooks/url';
 import { useEffect, useState } from 'react';
+import styles from './Search.css';
 
 export default function Search() {
   const { shapes } = useShapes();
-  const { params, setParameters } = useSearch();
+  const [search, setSearch] = useSearch();
   const [formData, setFormData] = useState({});
-  const { pokemon, shape } = params;
+  const { pokemon, shape } = search;
 
   useEffect(() => {
     setFormData({ pokemon, shape });
   }, [pokemon, shape]);
 
   function handleSubmit(e){
-    // e.preventDefault();
-    setParameters(formData);
+    e.preventDefault();
+    setSearch(formData);
   }
 
   function handleChange({ target: { name, value } }){
-    setFormData((formData) => ({ formData, [name]: value }));
+    setFormData((formData) => ({ ...formData, [name]: value }));
   }
 
   return (
@@ -33,16 +33,16 @@ export default function Search() {
         label="Pokemon"
         name="pokemon"
         value={formData.pokemon}
-        // onChange={handleChange}
+        onChange={handleChange}
       />
 
       <SelectControl
         label="Shape (count)"
         name="shape"
         value={formData.shape}
-        // onChange={handleChange}
+        onChange={handleChange}
       >
-        {/* <option value={''}>All Shapes</option> */}
+        <option value={''}>All Shapes</option>
         {shapes.map(({ shape, count }) => 
           <option key={shape + count} value={shape}>
             {`${shape} (${count})`}</option>)}

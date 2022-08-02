@@ -17,7 +17,8 @@ export function usePokedex(search, options) {
 
   useEffect(() => {
     let ignore = false;
-
+    //gets the search information from params and 
+    //destructures page and per page
     const fetch = async () => {
       const { data = {}, error } = await getPokedex(search, { 
         page,
@@ -31,7 +32,7 @@ export function usePokedex(search, options) {
         setPage(page);
         setCount(count);
         setError(null);
-
+        //allows for previously loaded pokemon to remain
         if(page === 1){
           setPokedex(results);
         } else {
@@ -59,23 +60,16 @@ export function usePokedex(search, options) {
 
 export function useShapes(){
   const [shapes, setShapes] = useState([]);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let ignore = false;
 
     async function fetch(){
       const { data, error } = await getShapes();
-
       if(ignore)return;
-
-      if (data){
-        setShapes(data);
-        setError(null);
-      }
-      if (error) {
-        setError(error);
-      }
+      setShapes(data);
+      setError(error);
     }
     fetch();
 
