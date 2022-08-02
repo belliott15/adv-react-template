@@ -22,10 +22,12 @@ export function usePokedex(search, options) {
     const fetch = async () => {
       const { data = {}, error } = await getPokedex(search, { 
         page,
-        perPage 
+        perPage, 
       });
 
       if (ignore) return;
+
+      console.log('loading', search, 'page', page);
 
       if(data){
         const { results, count } = data;
