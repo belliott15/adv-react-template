@@ -3,7 +3,8 @@ import { FuzzyBunnyContext } from '../context/FuzzyBunnyContext';
 import { 
   getFamiliesWithBunnies, 
   removeFamily, 
-  addFamily 
+  addFamily,
+  updateFamily
 } from '../services/fuzzy-bunny-service';
 
 
@@ -64,6 +65,11 @@ export function useFamilyActions(){
     type: 'add'
   });
 
+  const update = createAction({
+    service: updateFamily,
+    type: 'update'
+  });
 
-  return { remove, add };
+
+  return { remove, add, update };
 }

@@ -31,3 +31,13 @@ export async function addFamily(family){
   return response;
 }
 
+export async function updateFamily(family){
+  const response = await client  
+    .from('families')
+    .update(family)
+    .eq('id', family.id)
+    .single();
+
+  return response;
+}
+
