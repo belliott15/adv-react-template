@@ -12,3 +12,13 @@ export async function getFamiliesWithBunnies(){
         `);
 }
 
+export async function removeFamily(id) {
+  const response = await client
+    .from('families')
+    .delete()
+    .eq('id', id)
+    .single();
+
+  return response;
+}
+

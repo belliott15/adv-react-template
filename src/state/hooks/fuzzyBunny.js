@@ -33,3 +33,26 @@ export default function useFamilies() {
 }
 
 // create an actions function that follows CRUD 
+function createDispatchActions(dispatch){
+  return function createAction({ service, type }) {
+    return async (...args) => {
+      const { data, error } = await service(...args);
+
+      if (data){
+        dispatch({ type, payload: data });
+      }
+    };
+  };
+}
+
+export function useFamilyActions(){
+  const { familyDispatch } = useContext(FuzzyBunnyContext);
+
+  const createAction = createDispatchActions(familyDispatch);
+
+  const remove = createAction({
+    service: removeFamily,
+    type: 'delete'
+  });
+
+}

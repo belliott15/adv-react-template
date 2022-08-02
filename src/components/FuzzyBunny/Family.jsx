@@ -1,8 +1,6 @@
 import styles from './Family.css';
 
 export default function Family({ family }) {
-//   const [name, setName] = useState(family.name);
-
 
   return (
     <li className={styles.Family}>
