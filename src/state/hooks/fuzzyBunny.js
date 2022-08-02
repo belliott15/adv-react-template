@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { FuzzyBunnyContext } from '../context/FuzzyBunnyContext';
-import { getFamiliesWithBunnies } from '../services/fuzzy-bunny-service';
+import { 
+  getFamiliesWithBunnies, 
+  removeFamily 
+} from '../services/fuzzy-bunny-service';
 
 
 export default function useFamilies() {
@@ -36,7 +39,7 @@ export default function useFamilies() {
 function createDispatchActions(dispatch){
   return function createAction({ service, type }) {
     return async (...args) => {
-      const { data, error } = await service(...args);
+      const { data } = await service(...args);
 
       if (data){
         dispatch({ type, payload: data });
@@ -55,4 +58,6 @@ export function useFamilyActions(){
     type: 'delete'
   });
 
+
+  return { remove };
 }
