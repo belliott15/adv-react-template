@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Layout from './Page/Layout.jsx';
 import Home from './Home/Home.jsx';
-import Dungeon from './Dungeon/Dungeon.jsx';
+import Dungeon from './FuzzyBunny/BunnyList.jsx';
 import Lair from './Lair/Lair.jsx';
 import Pokedex from './API/Pokedex.jsx';
 

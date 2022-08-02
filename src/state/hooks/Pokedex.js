@@ -27,7 +27,7 @@ export function usePokedex(search, options) {
 
       if (ignore) return;
 
-      console.log('loading', search, 'page', page);
+      // console.log('loading', search, 'page', page);
 
       if(data){
         const { results, count } = data;

@@ -11,7 +11,8 @@ export default function Header() {
     { to: 'pokedex', label: 'Pokedex' }, 
     { to: 'lair', label: 'Lair' },
     { to: 'fuzzy-bunny', label: 'Fuzzy Bunnies' }
-  ]
+  ];
+  
   return (
     <header className={styles.Header}>
       <div className={styles.MenuContainer}>
