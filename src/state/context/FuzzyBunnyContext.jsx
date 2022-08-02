@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useReducer } from 'react';
 
 export const FuzzyBunnyContext = createContext();
 
@@ -17,4 +17,19 @@ function reducer(list, { type, payload }) {
   }
 }
 
+export default function FuzzyBunnyProvider({ children }) {
+  const [families, familyDispatch] = useReducer(reducer, null);
 
+  const value = {
+    families,
+    familyDispatch
+  };
+
+  return (
+    <FuzzyBunnyContext.Provider value={value}>
+      {children}
+    </FuzzyBunnyContext.Provider>
+  );
+
+    
+}
