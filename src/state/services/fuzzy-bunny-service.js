@@ -22,3 +22,12 @@ export async function removeFamily(id) {
   return response;
 }
 
+export async function addFamily(family){
+  const response = await client
+    .from('families')
+    .insert(family)
+    .single();
+
+  return response;
+}
+
