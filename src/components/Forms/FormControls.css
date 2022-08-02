@@ -67,7 +67,7 @@
     border: solid var(--color-3) 2px;
     cursor: pointer;
     margin-top: 20px;
-    width: 7em;
+    /* width: 7em; */
     justify-content: center;
     border-radius: 5px;
 }
