@@ -1,7 +1,10 @@
-
+import FamilyList from './FamilyList.jsx';
+import styles from './Families.css';
 
 export default function Families() {
   return (
-    <div>Families</div>
+    <section className={styles.FamilyList}>
+      <FamilyList />
+    </section>
   );
 }

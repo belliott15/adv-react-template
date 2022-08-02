@@ -21,7 +21,7 @@ export default function PokemonList() {
         <Card 
           key={pokemon._id}
           pokemon={pokemon}
-          loadRef={i === pokemon.length - 3 ? ref : null}
+          loadRef={i === pokedex.length - 3 ? ref : null}
         />
       ))}
     </ul>

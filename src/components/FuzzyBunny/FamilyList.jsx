@@ -1,12 +1,18 @@
-import useFamilies from "../../state/hooks/fuzzyBunny";
+import useFamilies from '../../state/hooks/fuzzyBunny';
+import Family from './Family';
 import styles from './FamilyList.css';
 
 
 export default function FamilyList() {
-    const { families } = useFamilies();
+  const { families } = useFamilies();
+
+  if (!families) return null;
+
   return (
-    <ul>
-        {}
+    <ul className={styles.FamilyList}>
+      {families.map((family) => (
+        <Family key={family.id} family={family} />
+      ))}
     </ul>
   );
 }
