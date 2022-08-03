@@ -13,7 +13,7 @@ export default function AddFamily() {
     e.preventDefault();
     await add({ name });
     setName('');
-  };
+  }
 
   return (
     <form className={styles.AddFamily} onSubmit={handleSubmit}>
