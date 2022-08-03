@@ -27,13 +27,12 @@ export function usePokedex(search, options) {
 
       if (ignore) return;
 
-      // console.log('loading', search, 'page', page);
-
       if(data){
         const { results, count } = data;
         setPage(page);
         setCount(count);
         setError(null);
+        
         //allows for previously loaded pokemon to remain
         if(page === 1){
           setPokedex(results);
