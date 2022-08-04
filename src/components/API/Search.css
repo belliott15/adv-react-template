@@ -1,0 +1,16 @@
+.pokeball{
+    border: 2px solid black;
+    border-radius: 50%;
+    background: linear-gradient(180deg, red 45%, black 50%, white 50%, black 120%);
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.Search{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(130px, 175px));
+    align-items: end;
+    gap: 5px;
+    align-items: center;
+}

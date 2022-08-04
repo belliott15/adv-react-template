@@ -1,0 +1,29 @@
+.Header{
+    background: linear-gradient(45deg, var(--color-3), var(--color-4), var(--color-2));
+    height: 60px;
+    font-size: 2em;
+
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 20px;
+    align-items: center;
+    padding-right: var(--padding);
+
+    .NavigationContainer{
+        display: none;
+        justify-self: end;
+    }
+
+    @media (min-width: 750px){
+        height: 90px;
+        padding: 0px 20px; 
+    .MenuContainer{
+        display: none;
+    }
+
+    .NavigationContainer{
+        display: initial;
+    }
+  } 
+}
+
