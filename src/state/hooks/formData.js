@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function useForm() {
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
 
   const handleChange = ({ target }) => {
     setData({

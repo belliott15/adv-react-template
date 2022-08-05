@@ -2,13 +2,14 @@ import { useState } from 'react';
 import useForm from '../../state/hooks/formData';
 import { useProfile } from '../../state/hooks/userAuth';
 import { FormButton, InputControl } from '../Forms/FormControls';
-import User from '../Page/Header/User';
+import Avatar from './Avatar';
+import styles from './Profile.css';
+
 
 export default function Profile() { 
   const [profile, handleChange] = useForm();
   const [updateProfile] = useProfile();
   const [preview, setPreview] = useState();
-  const [updating, setUpdating] = useState(false);
 
   const handlePreview = (e) => {
     const target = e.target;
@@ -24,9 +25,7 @@ export default function Profile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUpdating(true);
     await updateProfile(profile);
-    setUpdating(false);
   };
 
   return (
@@ -44,12 +43,15 @@ export default function Profile() {
         />
 
         <InputControl 
+          className={styles.Avatar}
           label="Avatar"
           name="avatar"
           type="file"
-          onChange={handleChange}
+          onChange={handlePreview}
           required
-        />
+        >
+          <Avatar src={preview} username={profile.username} />
+        </InputControl>
 
         <FormButton>Update</FormButton>
 

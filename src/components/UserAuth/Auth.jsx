@@ -23,7 +23,7 @@ function AuthForm({ header, button, link, message, onSubmit }) {
           type="email"
           placeholder="Email"
           required
-          // value={credentials.email}
+          value={credentials.email}
           onChange={handleChange}
         />
 
@@ -33,7 +33,7 @@ function AuthForm({ header, button, link, message, onSubmit }) {
           type="password"
           placeholder="Password"
           required
-          // value={credentials.password}
+          value={credentials.password}
           onChange={handleChange}
         />
 

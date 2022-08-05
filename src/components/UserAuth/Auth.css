@@ -5,7 +5,7 @@
     padding: var(--padding);
 
     form {
-        background: linear-gradient(0deg, var(--color-1) , var(--color-2) 100%);
+        background: linear-gradient(200deg, var(--color-1), rgba(150,255,255,0.7) );
         padding: var(--padding);
         width: 500px;
         border-radius: 5px;
