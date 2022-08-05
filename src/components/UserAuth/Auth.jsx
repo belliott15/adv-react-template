@@ -23,17 +23,17 @@ function AuthForm({ header, button, link, message, onSubmit }) {
           type="email"
           placeholder="Email"
           required
-          value={credentials.email}
+          // value={credentials.email}
           onChange={handleChange}
         />
 
         <InputControl 
-          lable="Password"
+          label="Password"
           name="password"
           type="password"
           placeholder="Password"
           required
-          value={credentials.password}
+          // value={credentials.password}
           onChange={handleChange}
         />
 
@@ -52,7 +52,7 @@ export default function Auth(){
     header: 'Please Sign In',
     button: 'Sign-In', 
     link: 'sign-up',
-    message: 'Already have an account?', 
+    message: 'Need a new account?', 
     onSubmit: signIn 
   };
 
@@ -60,7 +60,7 @@ export default function Auth(){
     header: 'Create a new Account',
     button: 'Sign-Up', 
     link: '../',
-    message: 'Need a new account?', 
+    message: 'Already have an account?', 
     onSubmit: signUp 
   };
 

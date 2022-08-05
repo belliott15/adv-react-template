@@ -51,9 +51,9 @@ export function UserProvider({ children }) {
 
   return (
     <UserStateContext.Provider value={stateValue}>
-      <UserActionContext value={actionValue}>
+      <UserActionContext.Provider value={actionValue}>
         {children}  
-      </UserActionContext>
+      </UserActionContext.Provider>
     </UserStateContext.Provider>
   );
 }

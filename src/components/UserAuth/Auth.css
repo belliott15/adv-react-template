@@ -1,0 +1,16 @@
+.Auth{
+    display: grid;
+    place-content: center;
+    
+    padding: var(--padding);
+
+    form {
+        background: linear-gradient(0deg, var(--color-1) , var(--color-2) 100%);
+        padding: var(--padding);
+        width: 500px;
+        border-radius: 5px;
+        display: grid;
+        row-gap: 20px;
+    }
+    
+}
