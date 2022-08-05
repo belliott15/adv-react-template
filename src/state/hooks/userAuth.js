@@ -17,10 +17,9 @@ export function useAuth(){
   const { setUser } = useContext(UserActionContext);
     
   //create a function that takes credentials 
-  //and passed them to multiple functions
-
+  //and passes them to multiple functions
   const createAction = (service) => async (credentials) => {
-    const { user, error } = await service(credentials);
+    const { user } = await service(credentials);
 
     if(user){
       setUser(user);
