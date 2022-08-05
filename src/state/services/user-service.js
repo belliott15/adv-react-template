@@ -50,14 +50,48 @@ export async function getLocalProfile(){
   }
 }
 
+//saves profile on the local system
 export function saveLocalProfile(profile){
   localStorage.setItem(PROFILE, JSON.stringify(profile));
 }
 
+//removes the profile on the local system
 export function removeLocalProfile(){
   localStorage.removeItem(PROFILE);
 }
 
+//if auth changes it will update the dom
 export function onAuthChange(handleAuthChange) {
   return client.auth.onAuthStateChange(handleAuthChange);
+}
+
+//eliminate user/session
+export function signOut(){
+  return client.auth.signOut();
+}
+
+//create a function to upload a photo and input it into supabase as a string
+const AVATARS = 'avatars';
+
+export async function uploadAvatar(userId, imgFile){
+  //create a string to input into the supabase image bucket
+  const imageName = `${userId}/${imgFile.name}`;
+
+  //get access to the bucket
+  const bucket = client.storage.from(AVATARS);
+
+  const { data, error } = await bucket.upload(imageName, imgFile, {
+    cacheControl: '3600',
+    //upsert updates images to replace current image if they have the same name 
+    upsert: true,
+  });
+
+  let url = null;
+
+  if(!error) {
+    url = bucket.getPublicUrl(
+      data.Key.replace(`${AVATARS}/`, '')).publicURL;
+  }
+
+  return { url, error };
 }

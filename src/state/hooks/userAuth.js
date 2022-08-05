@@ -3,7 +3,9 @@ import { UserActionContext, UserStateContext } from '../context/UserContext';
 import { 
   signIn as signInAction,
   signUp as signUpAction,
+  signOut as signOutAction,
   upsertProfile,
+  uploadAvatar,
 } from '../services/user-service';
 
 
@@ -27,19 +29,31 @@ export function useAuth(){
   };
   const signIn = createAction(signInAction);
   const signUp = createAction(signUpAction);
+  const signOut = createAction(signOutAction);
 
-  return { signIn, signUp };
+  return { signIn, signUp, signOut };
   
 }
 
 export function useProfile(){
-  const { profile } = useContext(UserStateContext);
+  const { user, profile } = useContext(UserStateContext);
   const { setProfile } = useContext(UserActionContext);
 
-  const updateProfile = async (profile) => {
-    const { data } = await upsertProfile(profile);
-    if (data){
-      setProfile(data);
+  const updateProfile = async ({ avatar, ...profile }) => {
+    const { url, error } = await uploadAvatar(user.id, avatar);
+    if (error) {
+      console.log(error);
+    }
+
+    if(url){
+      const { data } = await upsertProfile({ ...profile, avatar: url });
+
+      if (error){
+        console.log(error);
+      }
+      if (data){
+        setProfile(data);
+      }
     }
   };
 
