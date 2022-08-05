@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UserActionContext, UserStateContext } from '../context/userContext';
+import { UserActionContext, UserStateContext } from '../context/UserContext';
 import { 
   signIn as signInAction,
   signUp as signUpAction,

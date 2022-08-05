@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import useForm from '../../state/hooks/formData';
 import { useAuth } from '../../state/hooks/userAuth';
-import InputControl, { FormButton } from '../Forms/FormControls';
+import  { FormButton, InputControl } from '../Forms/FormControls';
 import styles from './Auth.css';
 
 function AuthForm({ header, button, link, message, onSubmit }) {

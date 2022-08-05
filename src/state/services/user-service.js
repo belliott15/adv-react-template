@@ -49,3 +49,15 @@ export async function getLocalProfile(){
     localStorage.removeItem(PROFILE);
   }
 }
+
+export function saveLocalProfile(profile){
+  localStorage.setItem(PROFILE, JSON.stringify(profile));
+}
+
+export function removeLocalProfile(){
+  localStorage.removeItem(PROFILE);
+}
+
+export function onAuthChange(handleAuthChange) {
+  return client.auth.onAuthStateChange(handleAuthChange);
+}

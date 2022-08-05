@@ -12,14 +12,16 @@ import Pokedex from './API/Pokedex.jsx';
 import FuzzyBunny from './FuzzyBunny/FuzzyBunny.jsx';
 import Families from './FuzzyBunny/Families.jsx';
 import FuzzyBunnyProvider from '../state/context/FuzzyBunnyContext.jsx';
-import { UserProvider } from '../state/context/userContext.jsx';
+// import { UserProvider } from '../state/context/userContext.jsx';
+// import UserAuth from './UserAuth/UserAuth.jsx';
 
 export default function App() {
   return (
     <Router>
-      <UserProvider>
+      {/* <UserProvider> */}
         <FuzzyBunnyProvider>
           <Routes>
+            {/* <Route path="user/*" element={<UserAuth/>} /> */}
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="pokedex" element={<Pokedex />} />
@@ -31,7 +33,7 @@ export default function App() {
             </Route>
           </Routes>
         </FuzzyBunnyProvider>
-      </UserProvider>
+      {/* </UserProvider> */}
     </Router>
   );
 }
