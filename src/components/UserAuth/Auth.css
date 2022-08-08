@@ -1,6 +1,8 @@
 .Auth{
     display: grid;
     place-content: center;
+    height: 100vh;
+    background: linear-gradient(200deg, var(--color-1), rgba(150,255,255,0.7) );
     
     padding: var(--padding);
 

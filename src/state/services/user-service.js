@@ -75,7 +75,6 @@ const AVATARS = 'avatars';
 
 export async function uploadAvatar(userId, imgFile){
   //create a string to input into the supabase image bucket
-  console.log('imgFile', imgFile);
   const imageName = `${userId}/${imgFile.name}`;
 
   //get access to the bucket
