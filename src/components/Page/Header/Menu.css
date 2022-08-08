@@ -1,0 +1,33 @@
+.Menu{
+    height: 60px;
+    width: 60px;
+    background: linear-gradient(125deg, var(--color-4), var(--color-3));
+    
+
+    &::before{
+        content: '☰';
+        font-size: 1.5em;
+    }
+
+    &.Open{
+        &::before {
+            content: '✕'
+        }
+        .MenuContainer{
+        transform: translateX(0);
+        width: 150px;
+      }
+    }
+
+    .MenuContainer{
+        position: absolute;
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 150px;
+        padding: 20px 10px;
+        background: linear-gradient(-35deg, var(--color-1), var(--color-2) 75%, var(--color-4) 90%, var(--color-3) 95%);
+        transform: translateX(-150%);
+        transition: transform 300ms linear;
+    }
+}
+

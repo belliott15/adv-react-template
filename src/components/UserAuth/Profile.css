@@ -1,0 +1,19 @@
+.Profile{
+    background: linear-gradient(200deg, var(--color-1) 20%, rgba(150,255,255,0.7) );
+    height: 100vh;
+    padding: var(--padding);
+    display: grid;
+    place-content: center;
+
+    form {
+        background: linear-gradient(200deg, var(--color-1), rgba(150,255,255,0.7) );
+        padding: var(--padding);
+        border: 2px solid var(--color-1);
+        -webkit-box-shadow: 5px 5px 10px 10px #000000; 
+        box-shadow: 5px 5px 15px 5px #000000;
+        width: 500px;
+        border-radius: 5px;
+        display: grid;
+        row-gap: 20px;
+    }
+}

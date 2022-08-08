@@ -1,0 +1,6 @@
+.FuzzyBunny {
+    padding: var(--padding);
+    
+    display: grid;
+    gap: 10px;
+}

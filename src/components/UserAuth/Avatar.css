@@ -1,0 +1,7 @@
+.Avatar{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border: solid 2px black;
+    border-radius: 50%;
+}
