@@ -15,6 +15,11 @@ export async function signUp(credentials){
   return await client.auth.signUp(credentials);
 }
 
+//eliminate user/session
+export function signOut(){
+  return client.auth.signOut();
+}
+
 //gets a users profile from the user_profile table in supabase
 export async function getProfile(){
   const user = getUser();
@@ -65,16 +70,12 @@ export function onAuthChange(handleAuthChange) {
   return client.auth.onAuthStateChange(handleAuthChange);
 }
 
-//eliminate user/session
-export function signOut(){
-  return client.auth.signOut();
-}
-
 //create a function to upload a photo and input it into supabase as a string
 const AVATARS = 'avatars';
 
 export async function uploadAvatar(userId, imgFile){
   //create a string to input into the supabase image bucket
+  console.log('imgFile', imgFile);
   const imageName = `${userId}/${imgFile.name}`;
 
   //get access to the bucket

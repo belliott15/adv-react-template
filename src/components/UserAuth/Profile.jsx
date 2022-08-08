@@ -8,13 +8,13 @@ import styles from './Profile.css';
 
 export default function Profile() { 
   const [profile, handleChange] = useForm();
-  const [updateProfile] = useProfile();
+  const [, updateProfile] = useProfile();
   const [preview, setPreview] = useState();
 
   const handlePreview = (e) => {
     const target = e.target;
     const [file] = target.files;
-    setPreview(URL.createObjectURL(false));
+    setPreview(URL.createObjectURL(file));
     handleChange({
       target: {
         name: target.name,
@@ -29,7 +29,7 @@ export default function Profile() {
   };
 
   return (
-    <section>
+    <section className={styles.Profile}>
       <form onSubmit={handleSubmit}>
         <h1>Profile</h1>
 

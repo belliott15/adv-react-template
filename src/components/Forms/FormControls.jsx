@@ -1,6 +1,6 @@
 import styles from './FormControls.css';
 import classNames from 'classnames';
-import { Children, cloneElement } from 'react';
+import { Children, cloneElement, forwardRef } from 'react';
 
 
 //Overview form control used on all controls
@@ -66,36 +66,53 @@ export function OptionGroupControl({
   );
 }
 
+const verifyValue = (props) => {
+  if (Object.prototype.hasOwnProperty.call(props, 'value'))
+    props.value = props.value ?? '';
+};
+
 function Label({ text }){
   return <span className="theme-font">{text}</span>;
 }
 
-export function InputControl({ label, className, value, ...rest }){
+export const InputControl = forwardRef((props, ref) => {
+  const { label, className, children, ...rest } = props;
+  verifyValue(rest);
+
   return (
     <FormControls label={label} className={className} >
-      <input value={value || ''} {...rest} />
+      <input ref={ref} {...rest} />
+      {children}
     </FormControls>
   );
-}
+});
 
-export function SelectControl({ label, children, value, ...rest }){
+InputControl.displayName = 'InputControl';
+
+export const SelectControl = forwardRef((props, ref) => {
+  const { label, children, ...rest } = props;
+  verifyValue(rest);
   return(
     <FormControls label={label} >
-      <select value={value || ''} {...rest}>{children}</select>
+      <select ref={ref} {...rest}>{children}</select>
     </FormControls> 
   );
-}
+});
 
-export function TextAreaControl({
-  label, 
-  ...rest
-}){
+SelectControl.displayName = 'SelectControl';
+
+export const TextAreaControl = forwardRef((props, ref) => {
+  const { label, ...rest } = props;
+  verifyValue(rest);
   return(
     <FormControls label={label} >
-      <textarea {...rest} ></textarea>
+      <textarea ref={ref} {...rest} ></textarea>
     </FormControls> 
   );
-}
+});
+
+TextAreaControl.displayName = 'TextAreaControl';
+
 
 export function CheckBoxControl({ label, text, ...rest }){
   return (
